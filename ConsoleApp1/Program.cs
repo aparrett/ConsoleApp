@@ -10,23 +10,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string myVar = "test";
-            Console.WriteLine("This is a {0} message.", myVar);
+            int[] myArr = { 1, 2, 3, 4, 5 };
 
-            string color = "purple";
-            switch (color)
+            Console.WriteLine(string.Join(" ", myArr));
+
+            for (int i = 0; i < myArr.Length; i++)
             {
-                case "green":
-                    Console.WriteLine($"Color is {color}");
-                    break;
+                Console.WriteLine(myArr[i]);
+            }
 
-                case "blue":
-                    Console.WriteLine($"Color is {color}");
-                    break;
-
-                default:
-                    Console.WriteLine($"This is the default message");
-                    break;
+            foreach (int myInt in myArr)
+            {
+                Console.WriteLine(myInt);
             }
         }
     }
