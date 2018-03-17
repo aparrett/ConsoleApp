@@ -10,19 +10,27 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int[] myArr = { 1, 2, 3, 4, 5 };
+            int a = 5;
+            string b = "test";
+            int c;
+            string d;
+            Test.ReturnRefValues(ref a, ref b);
+            Test.ReturnOutValues(out c, out d);
+            Console.WriteLine($"Value a is {a}, value b is {b}, value c is {c} and value d is {d}.");
+        }
+    }
 
-            Console.WriteLine(string.Join(" ", myArr));
-
-            for (int i = 0; i < myArr.Length; i++)
-            {
-                Console.WriteLine(myArr[i]);
-            }
-
-            foreach (int myInt in myArr)
-            {
-                Console.WriteLine(myInt);
-            }
+    class Test
+    {
+        public static void ReturnOutValues(out int i, out string s)
+        {
+            i = 1;
+            s = "one";
+        }
+        public static void ReturnRefValues(ref int i, ref string s)
+        {
+            i = 20;
+            s = "overwritten";
         }
     }
 }
