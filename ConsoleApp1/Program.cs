@@ -10,17 +10,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int a = 5;
-            string b = "test";
-            int c;
-            string d;
-            Test.ReturnRefValues(ref a, ref b);
-            Test.ReturnOutValues(out c, out d);
-            Console.WriteLine($"Value a is {a}, value b is {b}, value c is {c} and value d is {d}.");
+            int a = 1;
+            string b = "hello";
+            string c = TestClass.ReturnStr(a, s: b);
+            Console.WriteLine("The string returned is {0}", c);
         }
     }
 
-    class Test
+    class TestClass
     {
         public static void ReturnOutValues(out int i, out string s)
         {
@@ -31,6 +28,10 @@ namespace ConsoleApp1
         {
             i = 20;
             s = "overwritten";
+        }
+        public static string ReturnStr(int i, string s)
+        {
+            return s;
         }
     }
 }
