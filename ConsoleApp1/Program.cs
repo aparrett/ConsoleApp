@@ -4,13 +4,6 @@ using ConsoleApp1.Math;
 
 namespace ConsoleApp1
 {
-    public enum ShippingMethod
-    {
-        RegularAirMail = 1,
-        RegisteredAirMail = 2, 
-        Express = 3
-    }
-
     class Program
     {
         enum Weekdays
@@ -26,8 +19,8 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            var Wednesday = Weekdays.Wed;
-            Console.WriteLine((int)Wednesday);
+            var s = "Sun";
+            var WeekDay = (Weekdays)Enum.Parse(typeof(Weekdays), s);
         }
     }
 }
