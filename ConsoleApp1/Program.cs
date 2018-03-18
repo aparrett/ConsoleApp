@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ConsoleApp1.Math;
 
 namespace ConsoleApp1
 {
@@ -10,23 +7,17 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int x = 6, y = 0;
-            Console.WriteLine(Divide(x, y));
-        }
-        static int Divide(int x, int y)
-        {
-            int result = 0;
+            Person p = new Person();
+            p.FirstName = "Anthony";
+            p.LastName = "Parrett";
+            p.SayHello();
 
-            try
-            {
-                result = x / y;
-            }
-            catch (DivideByZeroException e)
-            {
-                Console.WriteLine("Cannot divide by zero.");
-            }
-
-            return result;
+            int x = 7;
+            int y = 4;
+            Calculator c = new Calculator();
+            int z = c.Add(x, y);
+            Console.WriteLine($"{x} + {y} = {z}");
         }
+
     }
 }
