@@ -10,28 +10,29 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int a = 1;
-            string b = "hello";
-            string c = TestClass.ReturnStr(a, s: b);
-            Console.WriteLine("The string returned is {0}", c);
+            double a = 11.1, b = 14.2;
+            int c = 1, d = 3;
+            float e = 5, f = 5;
+            double result = Sum(a, b);
+            int intResult = Sum(c, d);
+            float floatResult = Sum(e, f);
+            Console.WriteLine($"Double result = {result}. Int result = {intResult}. Float result = {floatResult}.");
         }
-    }
-
-    class TestClass
-    {
-        public static void ReturnOutValues(out int i, out string s)
+        public static double Sum(double x, double y)
         {
-            i = 1;
-            s = "one";
+            return x + y;
         }
-        public static void ReturnRefValues(ref int i, ref string s)
+        public static float Sum(float x, float y)
         {
-            i = 20;
-            s = "overwritten";
+            return x + y;
         }
-        public static string ReturnStr(int i, string s)
+        public static int Sum(int x, int y)
         {
-            return s;
+            return x + y;
+        }
+        public static int Sum(int x, int y, int z)
+        {
+            return x + y + z;
         }
     }
 }
