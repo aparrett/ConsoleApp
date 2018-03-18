@@ -10,29 +10,23 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            double a = 11.1, b = 14.2;
-            int c = 1, d = 3;
-            float e = 5, f = 5;
-            double result = Sum(a, b);
-            int intResult = Sum(c, d);
-            float floatResult = Sum(e, f);
-            Console.WriteLine($"Double result = {result}. Int result = {intResult}. Float result = {floatResult}.");
+            int x = 6, y = 0;
+            Console.WriteLine(Divide(x, y));
         }
-        public static double Sum(double x, double y)
+        static int Divide(int x, int y)
         {
-            return x + y;
-        }
-        public static float Sum(float x, float y)
-        {
-            return x + y;
-        }
-        public static int Sum(int x, int y)
-        {
-            return x + y;
-        }
-        public static int Sum(int x, int y, int z)
-        {
-            return x + y + z;
+            int result = 0;
+
+            try
+            {
+                result = x / y;
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("Cannot divide by zero.");
+            }
+
+            return result;
         }
     }
 }
