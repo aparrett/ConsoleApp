@@ -14,8 +14,7 @@ namespace ConsoleApp1
 
             int x = 7;
             int y = 4;
-            Calculator c = new Calculator();
-            int z = c.Add(x, y);
+            int z = Calculator.Add(x, y);
             Console.WriteLine($"{x} + {y} = {z}");
         }
 
