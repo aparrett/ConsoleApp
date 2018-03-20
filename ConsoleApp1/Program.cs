@@ -7,10 +7,25 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             var random = new Random();
-            for (var i = 0; i < 10; i++)
+            var randomNum = random.Next(1, 10);
+            Console.WriteLine("Please enter a number");
+            var userAnswer = Convert.ToInt32(Console.ReadLine());
+
+            for (var i = 1; i < 4; i++)
             {
-                Console.WriteLine(random.Next(5, 20));
+                if (userAnswer == randomNum)
+                {
+                    Console.WriteLine("You win!");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Sorry. Please try again.");
+                    userAnswer = Convert.ToInt32(Console.ReadLine());
+                }
             }
+
+            Console.WriteLine("You lose");
         }
     }
 }
