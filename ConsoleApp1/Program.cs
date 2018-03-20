@@ -1,26 +1,29 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
-using ConsoleApp1.Math;
 
 namespace ConsoleApp1
 {
-    class Program
+    partial class Program
     {
-        enum Weekdays
-        {
-            Sun = 0,
-            Mon = 1,
-            Tues = 2,
-            Wed = 3,
-            Thurs = 4,
-            Fri = 5,
-            Sat = 6
-        }
-
         static void Main(string[] args)
         {
-            var s = "Sun";
-            var WeekDay = (Weekdays)Enum.Parse(typeof(Weekdays), s);
+            int speedLimit, speed;
+            Console.WriteLine("Enter a speed limit");
+            speedLimit = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter a speed");
+            speed = Convert.ToInt32(Console.ReadLine());
+
+            if (speed <= speedLimit)
+            {
+                Console.WriteLine("Thank you for obeying the law");
+                return;
+            }
+
+            int speedDifference = speed - speedLimit;
+            int points = speedDifference / 5;
+
+            if (points > 12)
+                Console.WriteLine("License suspended");
+
         }
     }
 }
