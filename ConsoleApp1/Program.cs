@@ -7,28 +7,20 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var numbers = new List<int>() { 1, 2, 3, 4 };
-            numbers.Add(1);
-            numbers.AddRange(new int[3] { 5, 6, 7 });
-            foreach (var n in numbers)
-            {
-                Console.WriteLine(n);
-            }
+            var today = DateTime.Today;
+            var yesterday = today.AddDays(-1);
+            var tomorrow = today.AddDays(1);
+            var now = DateTime.Now;
 
-            
-            Console.WriteLine("index = " + numbers.LastIndexOf(1));
-            Console.WriteLine("count = " + numbers.Count);
+            Console.WriteLine(today);
+            Console.WriteLine(yesterday);
+            Console.WriteLine(tomorrow);
 
-            for (var i = 0; i < numbers.Count; i++)
-            {
-                if (numbers[i] == 1)
-                {
-                    numbers.Remove(numbers[i]);
-                }
-            }
-
-            var s = string.Join(" ", numbers);
-            Console.WriteLine(s);
+            Console.WriteLine(now.ToLongDateString());
+            Console.WriteLine(now.ToShortDateString());
+            Console.WriteLine(now.ToLongTimeString());
+            Console.WriteLine(now.ToShortTimeString());
+            Console.WriteLine(now.ToString("yy-MM-dd"));
         }
     }
 }
