@@ -6,24 +6,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int speedLimit, speed;
-            Console.WriteLine("Enter a speed limit");
-            speedLimit = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter a speed");
-            speed = Convert.ToInt32(Console.ReadLine());
-
-            if (speed <= speedLimit)
+            var random = new Random();
+            for (var i = 0; i < 10; i++)
             {
-                Console.WriteLine("Thank you for obeying the law");
-                return;
+                Console.WriteLine(random.Next(5, 20));
             }
-
-            int speedDifference = speed - speedLimit;
-            int points = speedDifference / 5;
-
-            if (points > 12)
-                Console.WriteLine("License suspended");
-
         }
     }
 }
