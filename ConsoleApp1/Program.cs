@@ -7,20 +7,32 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var today = DateTime.Today;
-            var yesterday = today.AddDays(-1);
-            var tomorrow = today.AddDays(1);
-            var now = DateTime.Now;
+            var fullName = "Anthony Parrett ";
+            Console.WriteLine("Trim: '{0}'", fullName.Trim());
+            Console.WriteLine("To Upper: '{0}'", fullName.Trim().ToUpper());
+            Console.WriteLine("To Lower: '{0}'", fullName.Trim().ToLower());
+            Console.WriteLine("To Upper: '{0}'", fullName.Trim().ToLower());
 
-            Console.WriteLine(today);
-            Console.WriteLine(yesterday);
-            Console.WriteLine(tomorrow);
+            var index = fullName.IndexOf(' ');
+            var firstName = fullName.Substring(0, index);
+            var lastName = fullName.Substring(index + 1);
+            Console.WriteLine("First Name: {0}. Last Name: {1}.", firstName.Trim(), lastName.Trim());
 
-            Console.WriteLine(now.ToLongDateString());
-            Console.WriteLine(now.ToShortDateString());
-            Console.WriteLine(now.ToLongTimeString());
-            Console.WriteLine(now.ToShortTimeString());
-            Console.WriteLine(now.ToString("yy-MM-dd"));
+            var names = fullName.Split(' ');
+            Console.WriteLine("First Name: {0}. Last Name: {1}.", names[0], names[1]);
+
+            var newFullName = fullName.Replace("Parrett", "Parrettiasdf");
+            Console.WriteLine(newFullName);
+
+            if (String.IsNullOrWhiteSpace(" "))
+                Console.WriteLine("Invalid");
+
+            var str = "25";
+            var age = Convert.ToByte(str);
+            Console.WriteLine(age);
+
+            float price = 29.95f;
+            Console.WriteLine(price.ToString("C0"));
         }
     }
 }
