@@ -8,7 +8,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var car = new Car();
+            var car = new Car("AP198375234");
         }
     }
 }
