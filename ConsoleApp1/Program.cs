@@ -8,13 +8,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var logger = new Logger();
-            var dbmigrator = new DbMigrator(logger);
-            var installer = new Installer(logger);
-
-            dbmigrator.Migrate();
-            installer.Install();
-
+            var car = new Car();
         }
     }
 }
