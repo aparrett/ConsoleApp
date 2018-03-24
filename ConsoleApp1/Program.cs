@@ -8,9 +8,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var text = new Text();
-            text.Copy();
-            text.Duplicate();
+            var logger = new Logger();
+            var dbmigrator = new DbMigrator(logger);
+            var installer = new Installer(logger);
+
+            dbmigrator.Migrate();
+            installer.Install();
+
         }
     }
 }
