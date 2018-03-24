@@ -9,32 +9,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var customer = new Customer(5, "Anthony");
-            customer.Orders.Add(new Order());
-
-            Console.WriteLine(customer.Orders.Count);
-        }
-
-        static void UsePoints()
-        {
-            try
-            {
-                var point1 = new Point(5, 7);
-                var point2 = new Point(10, 10);
-                point1.Move(null);
-                Console.WriteLine($"{point1.X}, {point1.Y}");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("An unexpected error occured.");
-            }
-        }
-
-        static void UseParams()
-        {
-            var calculator = new Calculator();
-            Console.WriteLine(calculator.Add(25, 13));
-            Console.WriteLine(calculator.Add(1, 2, 3, 4, 5));
+            var person = new Person(new DateTime(1992, 7, 7));
+            Console.WriteLine(person.Age);
         }
     }
 }
