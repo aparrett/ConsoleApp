@@ -12,6 +12,11 @@ namespace ConsoleApp1
             var cookie = new HttpCookie();
             cookie["name"] = "Anthony";
             Console.WriteLine(cookie["name"]);
+
+            var dictionary = new Dictionary<string, string>();
+            dictionary["name"] = "Anthony";
+            dictionary["name2"] = "Meagan";
+            Console.WriteLine(dictionary["name"] + dictionary["name2"]);
         }
     }
 }
