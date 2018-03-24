@@ -9,15 +9,29 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var customer = new Customer
-            {
-                Name = "Anthony",
-                Id = 5
-            };
-            Console.WriteLine(customer.Name);
 
-            var order = new Order();
-            customer.Orders.Add(order);
+        }
+
+        static void UsePoints()
+        {
+            try
+            {
+                var point1 = new Point(5, 7);
+                var point2 = new Point(10, 10);
+                point1.Move(null);
+                Console.WriteLine($"{point1.X}, {point1.Y}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An unexpected error occured.");
+            }
+        }
+
+        static void UseParams()
+        {
+            var calculator = new Calculator();
+            Console.WriteLine(calculator.Add(25, 13));
+            Console.WriteLine(calculator.Add(1, 2, 3, 4, 5));
         }
     }
 }
