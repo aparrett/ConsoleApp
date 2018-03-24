@@ -9,8 +9,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var person = new Person(new DateTime(1992, 7, 7));
-            Console.WriteLine(person.Age);
+            var cookie = new HttpCookie();
+            cookie["name"] = "Anthony";
+            Console.WriteLine(cookie["name"]);
         }
     }
 }
