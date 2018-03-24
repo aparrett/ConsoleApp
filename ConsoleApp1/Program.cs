@@ -9,14 +9,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var customer = new Customer(5, "Anthony");
-            var order = new Order();
-
-            customer.Orders.Add(order);
+            var customer = new Customer();
+            customer.Name = "Anthony";
             Console.WriteLine(customer.Name);
 
-            var customer1 = new Customer(4, "Meagan");
-            Console.WriteLine(customer1.Name);
+            var order = new Order();
+            customer.Orders.Add(order);
         }
     }
 }

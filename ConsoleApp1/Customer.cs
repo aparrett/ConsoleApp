@@ -12,18 +12,5 @@ namespace ConsoleApp1
         {
             Orders = new List<Order>();
         }
-
-        public Customer(int id)
-        {
-            this.Id = id;
-            Orders = new List<Order>();
-        }
-
-        public Customer(int id, string name)
-        {
-            this.Id = id;
-            this.Name = name;
-            Orders = new List<Order>();
-        }
     }
 }
