@@ -9,7 +9,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            var customer = new Customer(5, "Anthony");
+            customer.Orders.Add(new Order());
 
+            Console.WriteLine(customer.Orders.Count);
         }
 
         static void UsePoints()
