@@ -9,14 +9,21 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var cookie = new HttpCookie();
-            cookie["name"] = "Anthony";
-            Console.WriteLine(cookie["name"]);
-
-            var dictionary = new Dictionary<string, string>();
-            dictionary["name"] = "Anthony";
-            dictionary["name2"] = "Meagan";
-            Console.WriteLine(dictionary["name"] + dictionary["name2"]);
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            Console.WriteLine("Do stuff");
+            stopwatch.Stop();
+            Console.WriteLine(stopwatch.TimeElapsed);
         }
     }
 }
