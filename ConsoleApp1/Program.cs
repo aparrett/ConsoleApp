@@ -8,6 +8,11 @@ namespace ConsoleApp1
         {
             var dbMigrator = new DbMigrator(new ConsoleLogger());
             dbMigrator.Migrate();
+
+            var dbMigrator2 = new DbMigrator(new FileLogger("C:\\Log\\log.txt"));
+            dbMigrator2.Migrate();
+
+
         }
     }
 }
