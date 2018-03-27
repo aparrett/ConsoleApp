@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -8,7 +9,7 @@ namespace ConsoleApp1
         {
             var processor = new PhotoProcessor();
             var filters = new PhotoFilters();
-            PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness;
+            Action<Photo> filterHandler = filters.ApplyBrightness;
             filterHandler += filters.ApplyContrast;
             filterHandler += filters.Resize;
             processor.Process("photo.jpg", filterHandler);
