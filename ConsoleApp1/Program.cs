@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -7,7 +6,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            var video = new Video() {Title = "Video 1"};
+            var videoEncoder = new VideoEncoder();
+            var mailService = new MailService();
+            videoEncoder.VideoEncoded += mailService.OnVideoEncoded;
 
+            videoEncoder.Encode(video);
         }
     }
 }
