@@ -11,14 +11,8 @@ namespace ConsoleApp1
         {
             var books = new BookRepository().GetBooks();
 
-            var expensiveBooks =
-                from b in books
-                where b.Price > 10
-                orderby b.Title
-                select b.Title;
-
-            foreach (var title in expensiveBooks)
-                Console.WriteLine(title);
+            var book = books.Single(b => b.Title == "Hello world 1");
+            Console.WriteLine(book.Title);
         }
     }
 
