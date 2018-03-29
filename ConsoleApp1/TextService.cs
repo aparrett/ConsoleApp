@@ -2,11 +2,11 @@
 
 namespace ConsoleApp1
 {
-    public class MailService
+    public class TextService
     {
         public void OnVideoEncoded(object source, VideoEventArgs e)
         {
-            Console.WriteLine("Email sent by Mail Service about " + e.Video.Title);
+            Console.WriteLine("Text sent by Text Service." + e.Video.Title);
         }
     }
 }
