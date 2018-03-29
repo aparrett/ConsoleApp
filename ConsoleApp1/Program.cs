@@ -10,15 +10,15 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             var books = new BookRepository().GetBooks();
-            var cheapBookTitles = books
-                                    .Where(b => b.Price < 10)
-                                    .OrderBy(b => b.Price)
-                                    .Select(b => b.Title);
 
-            foreach (var title in cheapBookTitles)
-            {
+            var expensiveBooks =
+                from b in books
+                where b.Price > 10
+                orderby b.Title
+                select b.Title;
+
+            foreach (var title in expensiveBooks)
                 Console.WriteLine(title);
-            }
         }
     }
 
