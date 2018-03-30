@@ -9,7 +9,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-           
+            DateTime? birthday = null;
+            Console.WriteLine(birthday.GetValueOrDefault());
         }
     }
 }
