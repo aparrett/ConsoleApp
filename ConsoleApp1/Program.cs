@@ -10,29 +10,21 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            StreamReader streamReader = null;
             try
             {
-                streamReader = new StreamReader(@"C:\file.txt");
-                var content = streamReader.ReadToEnd();
+                using (var streamReader = new StreamReader(@"C:\file.txt"))
+                {
+                    var content = streamReader.ReadToEnd();
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine("Sorry, that file could not be found.");
             }
             catch (Exception e)
             {
                 Console.WriteLine("Sorry, an unexpected error occured.");
             }
-            finally
-            {
-                if (streamReader != null)
-                    streamReader.Dispose();
-            }
-        }
-    }
-
-    public class Calculator
-    {
-        public int Divide(int numerator, int denomenator)
-        {
-            return numerator / denomenator;
         }
     }
 }
