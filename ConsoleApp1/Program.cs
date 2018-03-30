@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 namespace ConsoleApp1
@@ -9,24 +10,20 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            StreamReader streamReader = null;
             try
             {
-                var calculator = new Calculator();
-                var result = calculator.Divide(5, 0);
-
-
-            }
-            catch (DivideByZeroException e)
-            {
-                Console.WriteLine("Sorry, cannot divide by zero.");
-            }
-            catch (ArithmeticException e)
-            {
-                Console.WriteLine("Sorry, an unexpected arithmetic error occured.");
+                streamReader = new StreamReader(@"C:\file.txt");
+                var content = streamReader.ReadToEnd();
             }
             catch (Exception e)
             {
                 Console.WriteLine("Sorry, an unexpected error occured.");
+            }
+            finally
+            {
+                if (streamReader != null)
+                    streamReader.Dispose();
             }
         }
     }
