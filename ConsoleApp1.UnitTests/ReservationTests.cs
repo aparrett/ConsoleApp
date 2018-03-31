@@ -1,23 +1,23 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConsoleApp1.Fundamentals;
+using NUnit.Framework;
 
 namespace ConsoleApp1.UnitTests
 {
-    [TestClass]
+    [TestFixture]
     public class ReservationTests
     {
-        [TestMethod]
+        [Test]
         public void CanBeCancelledBy_AdminCancelling_ReturnsTrue()
         {
             var reservation = new Reservation();
 
             var result = reservation.CanBeCancelledBy(new User {IsAdmin = true});
 
-            Assert.IsTrue(result);
+            Assert.That(result == true);
         }
 
-        [TestMethod]
+        [Test]
         public void CanBeCancelledBy_SameUserCancelling_ReturnsTrue()
         {
             var user = new User();
@@ -25,17 +25,17 @@ namespace ConsoleApp1.UnitTests
 
             var result = reservation.CanBeCancelledBy(user);
 
-            Assert.IsTrue(result);
+            Assert.That(result == true);
         }
 
-        [TestMethod]
+        [Test]
         public void CanBeCancelledBy_AnotherUserCancelling_ReturnsFalse()
         {
             var reservation = new Reservation();
 
             var result = reservation.CanBeCancelledBy(new User());
 
-            Assert.IsFalse(result);
+            Assert.That(result == false);
         }
     }
 }
