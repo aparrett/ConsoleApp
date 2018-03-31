@@ -8,7 +8,7 @@ namespace ConsoleApp1.UnitTests
     public class ReservationTests
     {
         [TestMethod]
-        public void CanBeCancelledBy_UserIsAdmin_ReturnsTrue()
+        public void CanBeCancelledBy_AdminCancelling_ReturnsTrue()
         {
             var reservation = new Reservation();
 
@@ -18,7 +18,7 @@ namespace ConsoleApp1.UnitTests
         }
 
         [TestMethod]
-        public void CanBeCancelledBy_UserIsMadeBy_ReturnsTrue()
+        public void CanBeCancelledBy_SameUserCancelling_ReturnsTrue()
         {
             var user = new User();
             var reservation = new Reservation {MadeBy = user};
@@ -29,7 +29,7 @@ namespace ConsoleApp1.UnitTests
         }
 
         [TestMethod]
-        public void CanBeCancelledBy_UserIsNotMadeByOrAdmin_ReturnsFalse()
+        public void CanBeCancelledBy_AnotherUserCancelling_ReturnsFalse()
         {
             var reservation = new Reservation();
 
