@@ -15,7 +15,7 @@ namespace ConsoleApp1.UnitTests
         }
 
         [Test]
-        public void Add_WhenCalled_ReturnTheSumOfArguments()
+        public void Add_WhenCalled_ReturnSum()
         {
             var result = _math.Add(1, 2);
 
@@ -23,10 +23,10 @@ namespace ConsoleApp1.UnitTests
         }
 
         [Test]
-        [TestCase(2, 1, 2)]
         [TestCase(1, 2, 2)]
+        [TestCase(2, 1, 2)]
         [TestCase(1, 1, 1)]
-        public void Max_WhenCalled_ReturnTheGreaterArgument(int a, int b, int expectedResult)
+        public void Max_WhenCalled_ReturnMaxArgument(int a, int b, int expectedResult)
         {
             var result = _math.Max(a, b);
 
