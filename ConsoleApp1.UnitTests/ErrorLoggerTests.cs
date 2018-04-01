@@ -1,4 +1,6 @@
-﻿using ConsoleApp1.Fundamentals;
+﻿using System;
+using System.Runtime.Remoting.Channels;
+using ConsoleApp1.Fundamentals;
 using NUnit.Framework;
 
 namespace ConsoleApp1.UnitTests
@@ -25,6 +27,19 @@ namespace ConsoleApp1.UnitTests
             var logger = new ErrorLogger();
 
             Assert.That(() => logger.Log(error), Throws.ArgumentNullException);
+        }
+
+        [Test]
+        public void Log_ValidError_RaiseErrorLoggedEvent()
+        {
+            var logger = new ErrorLogger();
+
+            var id = Guid.Empty;
+            logger.ErrorLogged += (sender, args) => { id = args; };
+
+            logger.Log("a");
+
+            Assert.That(id, Is.Not.EqualTo(Guid.Empty));
         }
     }
 }
