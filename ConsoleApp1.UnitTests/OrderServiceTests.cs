@@ -10,7 +10,7 @@ namespace ConsoleApp1.UnitTests
         [Test]
         public void PlaceOrder_WhenCalled_StoreTheOrder()
         {
-            var storage = new Mock<IStorage>();      
+            var storage = new Mock<IStorage>();
             var service = new OrderService(storage.Object);
 
             var order = new Order();
