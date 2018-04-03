@@ -48,6 +48,8 @@
     <Compile Include="Fundamentals\FizzBuzz.cs" />
     <Compile Include="Fundamentals\Math.cs" />
     <Compile Include="Fundamentals\HtmlFormatter.cs" />
+    <Compile Include="Fundamentals\Stack.cs" />
+    <Compile Include="Mocking\OrderService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Fundamentals\Reservation.cs" />
@@ -55,8 +57,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mocking\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
